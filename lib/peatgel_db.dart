@@ -15,6 +15,14 @@ class PeatgelData {
 }
 
 final Map<String, PeatgelData> peatgelDB = {
+    // Общие рекомендации для неизвестных растений
+  '_default': PeatgelData(
+    name: 'Общие рекомендации',
+    soil: '5 л на 300 л воды на 1 га',
+    seeds: 'Протравливание/замачивание перед посевом. Раствор: 1,5 л на 8,5 л воды',
+    vegetation: '2-3 кратное:\n1. Фаза активного роста\n2. Фаза бутонизации/цветения\n3. При необходимости через 10-14 дней',
+    dose: '1 л на 200 л воды на 1 га',
+  ),
   'пшеница': PeatgelData(
     name: 'Пшеница',
     soil: '5 л на 300 л воды на 1 га. Весной: 2 л/га.',
@@ -278,12 +286,19 @@ final Map<String, PeatgelData> peatgelDB = {
 
 PeatgelData? findPlant(String query) {
   final q = query.toLowerCase().trim();
+  
+  // Сначала ищем точное совпадение
   if (peatgelDB.containsKey(q)) return peatgelDB[q];
+  
+  // Потом ищем частичное совпадение
   for (final entry in peatgelDB.entries) {
+    if (entry.key == '_default') continue; // Пропускаем запись по умолчанию
     if (entry.value.name.toLowerCase().contains(q) ||
         entry.key.toLowerCase().contains(q)) {
       return entry.value;
     }
   }
-  return null;
+  
+  // Если ничего не найдено - возвращаем общие рекомендации
+  return peatgelDB['_default'];
 }
