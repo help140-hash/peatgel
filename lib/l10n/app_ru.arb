@@ -1,0 +1,14 @@
+{
+  "@@locale": "ru",
+  "appTitle": "Питгель",
+  "identifyPlant": "Определить растение",
+  "takePhoto": "Сделать фото",
+  "uploadImage": "Загрузить изображение",
+  "analyzing": "Анализ...",
+  "plantName": "Название растения",
+  "scientificName": "Научное название",
+  "confidence": "Уверенность",
+  "recommendations": "Рекомендации",
+  "error": "Ошибка",
+  "tryAgain": "Попробовать снова"
+}
