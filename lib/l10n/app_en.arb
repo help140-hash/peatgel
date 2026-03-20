@@ -1,0 +1,47 @@
+{
+  "@@locale": "en",
+  "appTitle": "Peatgel",
+  "@appTitle": {
+    "description": "The title of the application"
+  },
+  "identifyPlant": "Identify Plant",
+  "@identifyPlant": {
+    "description": "Button text for plant identification"
+  },
+  "takePhoto": "Take Photo",
+  "@takePhoto": {
+    "description": "Button text for taking a photo"
+  },
+  "uploadImage": "Upload Image",
+  "@uploadImage": {
+    "description": "Button text for uploading an image"
+  },
+  "analyzing": "Analyzing...",
+  "@analyzing": {
+    "description": "Text shown during image analysis"
+  },
+  "plantName": "Plant Name",
+  "@plantName": {
+    "description": "Label for plant name"
+  },
+  "scientificName": "Scientific Name",
+  "@scientificName": {
+    "description": "Label for scientific name"
+  },
+  "confidence": "Confidence",
+  "@confidence": {
+    "description": "Label for confidence score"
+  },
+  "recommendations": "Recommendations",
+  "@recommendations": {
+    "description": "Section title for plant care recommendations"
+  },
+  "error": "Error",
+  "@error": {
+    "description": "Error label"
+  },
+  "tryAgain": "Try Again",
+  "@tryAgain": {
+    "description": "Button text to retry"
+  }
+}
