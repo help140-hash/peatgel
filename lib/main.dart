@@ -390,26 +390,6 @@ class _PlantPageState extends State<PlantPage> {
               const SizedBox(height: 12),
               Builder(builder: (context) {
                 final peatgel = _findPeatgel(_results);
-                if (peatgel == null) {
-                  return Container(
-                    padding: const EdgeInsets.all(12),
-                    decoration: BoxDecoration(
-                      color: Colors.orange[50],
-                      borderRadius: BorderRadius.circular(12),
-                      border: Border.all(color: Colors.orange),
-                    ),
-                    child: const Row(
-                      children: [
-                        Icon(Icons.info_outline, color: Colors.orange),
-                        SizedBox(width: 8),
-                        Expanded(
-                          child: Text(
-                            'Культура не найдена в базе Peatgel.',
-                            style: TextStyle(color: Colors.orange),
-                          ),
-                        ),
-                      ],
-                    ),
                   );
                 }
                 return Card(
