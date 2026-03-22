@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:http/http.dart' as http;
 import 'peatgel_db.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 void main() {
@@ -15,7 +17,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Peatgel Digital',
+            // Локализация
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ru'),
+      ],
+      onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
+
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
@@ -35,8 +49,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color(0xFFF1F8E9),
       appBar: AppBar(
-        title: const Text('Peatgel Digital',
-            style: TextStyle(fontWeight: FontWeight.bold)),
+        title: Text(AppLocalizations.of(context)!.appTitle,            style: TextStyle(fontWeight: FontWeight.bold)),
         backgroundColor: Colors.green[700],
         foregroundColor: Colors.white,
         actions: [
@@ -71,8 +84,7 @@ class HomePage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              'Определение растений',
-              style: TextStyle(
+              AppLocalizations.of(context)!.identifyPlant,              style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
                 color: Colors.green[800],
@@ -97,8 +109,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 icon: const Icon(Icons.camera_alt, size: 22),
-                label: const Text('Сфотографировать',
-                    style: TextStyle(fontSize: 16)),
+              label: Text(AppLocalizations.of(context)!.takePhoto,                    style: TextStyle(fontSize: 16)),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.green[700],
                   foregroundColor: Colors.white,
@@ -122,8 +133,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 icon: const Icon(Icons.photo_library, size: 22),
-                label: const Text('Выбрать из галереи',
-                    style: TextStyle(fontSize: 16)),
+              label: Text(AppLocalizations.of(context)!.uploadImage,                    style: TextStyle(fontSize: 16)),
                 style: OutlinedButton.styleFrom(
                   foregroundColor: Colors.green[700],
                   side: BorderSide(color: Colors.green[700]!, width: 2),
