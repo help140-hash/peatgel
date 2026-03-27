@@ -364,12 +364,11 @@ class _PlantPageState extends State<PlantPage> {
                   final sciName =
                       species?['scientificNameWithoutAuthor'] ?? '—';
                   final commonNames =
-                      (species?['commonNames'] as List?)
-                          ?.take(2)
+                      (species?['commonNames'] as List?).take(2)                          
                           .join(', ') ??
                           '';
                   return Card(
-                    margin: const EdgeInsets.only(bottom: 6),
+                    margin:  EdgeInsets.only(bottom: 6),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(12),
                     ),
