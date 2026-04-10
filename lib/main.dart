@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'peatgel_db.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import 'result_page.dart';
 
 void main() {
   runApp(const MyApp());
